@@ -11,7 +11,7 @@
         android:id="@+id/koloda"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:koloda_card_layout="@layout/item_koloda"
+        app:koloda_card_layout="@layout/item_koloda"
         tools:ignore="MissingClass" />
 
     <LinearLayout

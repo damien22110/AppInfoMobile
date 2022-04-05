@@ -1,11 +1,14 @@
 package uqac.dim.appinfomobile;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.yalantis.library.Koloda;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
     private SwipeAdapter adapter;

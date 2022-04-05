@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/close_24.xml" value="0.2175" />
         <entry key="app/src/main/res/drawable/favorite_24.xml" value="0.293" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/item_koloda.xml" value="0.33" />

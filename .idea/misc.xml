@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/favorite_24.xml" value="0.2285" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.340625" />
-        <entry key="app/src/main/res/layout/item_koloda.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/drawable/favorite_24.xml" value="0.293" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/item_koloda.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/swipe_in_layout.xml" value="0.340625" />
+        <entry key="app/src/main/res/layout/swipe_out_layout.xml" value="0.340625" />
+        <entry key="app/src/main/res/layout/swipecardview_layout.xml" value="0.340625" />
       </map>
     </option>
   </component>

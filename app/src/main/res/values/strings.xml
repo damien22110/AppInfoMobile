@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">AppInfoMobile</string>
-    <string name="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></string>
-    <string name="dislike"><i class="fa fa-thumbs-down" aria-hidden="true"></i></string>
+    <string name="like">👍</string>
+    <string name="dislike">👎</string>
 </resources>

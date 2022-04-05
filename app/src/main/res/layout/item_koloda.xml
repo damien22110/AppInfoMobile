@@ -28,7 +28,30 @@
                 app:srcCompat="@drawable/two"
                 android:scaleType="fitXY"
                 app:shapeAppearanceOverlay="@style/Shape"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="bottom"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_height="65dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/close_24"
+                    app:tint="@color/black" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/favorite_24"
+                    android:tint="@color/black"/>
 
+
+
+            </LinearLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

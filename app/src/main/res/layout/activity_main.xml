@@ -12,7 +12,7 @@
         android:id="@+id/koloda"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:koloda_card_layout="@layout/item_koloda"
+        android:koloda_card_layout="@layout/item_koloda"
         tools:ignore="MissingClass" />
 
     <LinearLayout
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_dislike" />
+            android:src="@drawable/close_24" />
 
 
         <ImageButton
@@ -40,7 +40,7 @@
             android:layout_marginLeft="40dp"
             android:layout_weight="0.5"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_like" />
+            android:src="@drawable/favorite_24" />
 
     </LinearLayout>
 

@@ -42,7 +42,7 @@
                 android:layout_weight="1"
                 android:src="@drawable/close_24"/>
             <ImageView
-                android:layout_width="4p"
+                android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"

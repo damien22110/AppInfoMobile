@@ -19,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        koloda=findViewById(R.id.koloda);
+        koloda = findViewById(R.id.koloda);
         list = new ArrayList<>();
 
         adapter = new SwipeAdapter(this, list);
         koloda.setAdapter(adapter);
     }
+}

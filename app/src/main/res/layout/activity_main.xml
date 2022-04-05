@@ -44,8 +44,8 @@ tools:context=".MainActivity">
     android:layout_height="300dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="MissingClass">
 </com.mindorks.placeholderview.SwipePlaceHolderView>
-</android.support.constraint.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,7 +38,7 @@ public class SwipeAdapter extends BaseAdapter {
         if (convertView==null)
         {
             view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_koloda,parent,false);
-        }else
+        } else
         {
             view=convertView;
         }

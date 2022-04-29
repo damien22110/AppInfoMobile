@@ -47,6 +47,7 @@ public class Swipe extends Fragment {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     ArrayList<Film> filmDb = new ArrayList<Film>();
+    ArrayList<Film> userFilm = new ArrayList<Film>();
 
     public Swipe() {
         // Required empty public constructor
@@ -98,7 +99,11 @@ public class Swipe extends Fragment {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.i("DIM", document.getId() + " => " + document.getData());
-                                filmDb.add(new Film(document.getData().get("realisator").toString(), document.getData().get("title").toString(), document.getData().get("type").toString(), document.getData().get("picture").toString()));
+                                if (document.getData().get("picture")!= null) {
+                                    filmDb.add(new Film(document.getData().get("realisator").toString(), document.getData().get("title").toString(), document.getData().get("type").toString(), document.getData().get("picture").toString()));
+                                } else {
+                                    filmDb.add(new Film(document.getData().get("realisator").toString(), document.getData().get("title").toString(), document.getData().get("type").toString(), null));
+                                }
 
                             }
                         } else {
@@ -113,4 +118,7 @@ public class Swipe extends Fragment {
         return root;
     }
 
+    public void onCardSwipedRight(int i) {
+        Log.i("DIM", "tourne a droite");
+    }
 }

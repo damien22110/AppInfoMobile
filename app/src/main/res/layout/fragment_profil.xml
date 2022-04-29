@@ -40,7 +40,7 @@
             android:background="@drawable/textviewborder"
             android:gravity="center_vertical"
             android:padding="5dp"
-            android:text="@string/Prenom" />
+            android:text="@string/username" />
 
         <TextView
             android:id="@+id/textView_profil_adresse"

@@ -3,8 +3,9 @@
     <string name="like">👍</string>
     <string name="dislike">👎</string>
     <string name="Info">Informations de l\'utilisateur</string>
-    <string name="Données">Afficher les données confidentielles</string>
+    <string name="username">Nom d\'utilisateur</string>
     <string name="Adresse">Adresse mail :</string>
+    <string name="logout">Se déconnecter !</string>
     <string name="MDP">Mot de passe :</string>
     <string name="Film_name">Nom du film</string>
     <string name="Allready">Déja inscrit, cliquer ici !</string>

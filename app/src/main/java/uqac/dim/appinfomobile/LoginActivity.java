@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar);
@@ -46,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 

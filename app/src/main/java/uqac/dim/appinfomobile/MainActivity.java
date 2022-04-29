@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
+
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -12,10 +13,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.fragment.app.Fragment;
+
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import com.yalantis.library.Koloda;
 
 import java.util.ArrayList;
@@ -27,9 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Integer> list;
 
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-
-    TextView mytexte;
-    Button mybutton;
+    Integer currentFragmentID = R.id.swipe;
+    Fragment selectedFragment = null;
     Koloda koloda;
 
     @Override
@@ -74,16 +79,24 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.swipe:
-                    selectedFragment = new Swipe();
+                    if(currentFragmentID != R.id.swipe) {
+                        selectedFragment = new Swipe();
+                        currentFragmentID = R.id.swipe;
+                    }
                     break;
                 case R.id.suggestion:
-                    selectedFragment = new Suggestion();
+                    if(currentFragmentID != R.id.suggestion) {
+                        selectedFragment = new Suggestion();
+                        currentFragmentID = R.id.suggestion;
+                    }
                     break;
                 case R.id.profil:
+                    if(currentFragmentID != R.id.profil) {
                     selectedFragment = new Profil();
+                    currentFragmentID = R.id.profil;
+                    }
                     break;
             }
             // It will help to replace the

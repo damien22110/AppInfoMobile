@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:layout_height="match_parent">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_margin="30dp"
-        app:cardElevation="5dp"
+        android:layout_gravity="bottom"
+        app:cardElevation="16dp"
         app:cardCornerRadius="25dp">
 
         <LinearLayout
@@ -20,7 +19,7 @@
             android:layout_height="400dp">
             <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="350dp"
                 android:id="@+id/image"
                 android:backgroundTint="@color/white"
                 layout_constraintTop_toTopOf="parent"
@@ -28,6 +27,10 @@
                 app:srcCompat="@drawable/two"
                 android:scaleType="fitXY"
                 app:shapeAppearanceOverlay="@style/Shape"/>
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:text="@string/Film_name" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

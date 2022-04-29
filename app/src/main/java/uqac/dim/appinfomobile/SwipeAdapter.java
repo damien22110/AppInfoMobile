@@ -5,29 +5,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.List;
 
 public class SwipeAdapter extends BaseAdapter {
-    private List<Integer> list;
+    private List<Film> list;
 
-    public SwipeAdapter(List<Integer> list) {
+    public SwipeAdapter(List<Film> list) {
         this.list = list;
     }
 
     @Override
     public int getCount() {
-        return 100;
+        return list.size();
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public Film getItem(int i) {
+        return list.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
@@ -36,6 +37,8 @@ public class SwipeAdapter extends BaseAdapter {
         if (convertView==null)
         {
             view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_koloda,parent,false);
+            TextView mv_name = view.findViewById(R.id.movie_name);
+            mv_name.setText(getItem(i).title);
         } else
         {
             view=convertView;

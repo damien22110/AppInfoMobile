@@ -4,6 +4,11 @@
     <string name="dislike">👎</string>
     <string name="Info">Informations de l\'utilisateur</string>
     <string name="Données">Afficher les données confidentielles</string>
+    <string name="Nom">Nom : </string>
+    <string name="Prenom">Prénom :</string>
+    <string name="Adresse">Adresse mail :</string>
+    <string name="MDP">Mot de passe :</string>
+    <string name="Film_name">Nom du film</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

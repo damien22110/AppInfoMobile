@@ -9,8 +9,6 @@
     tools:context=".Swipe">
 
 
-
-    <!-- TODO: Update blank fragment layout -->
     <com.yalantis.library.Koloda
         android:id="@+id/koloda"
         android:layout_width="match_parent"
@@ -26,12 +24,7 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/my_nav" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="201dp"
-            android:layout_height="90dp"
-            android:text="TEST"
-            android:textSize="64sp" />
+
     </com.yalantis.library.Koloda>
 
 </FrameLayout>

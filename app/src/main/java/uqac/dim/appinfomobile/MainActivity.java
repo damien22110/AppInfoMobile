@@ -1,18 +1,20 @@
 package uqac.dim.appinfomobile;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.util.Log;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.yalantis.library.Koloda;
 
 import java.util.ArrayList;
@@ -32,36 +34,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         list = new ArrayList<>();
+        koloda = findViewById(R.id.koloda);
+
+
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.swipe, R.id.suggestion, R.id.profil).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        bottomNavigationView.setSelectedItemId(R.id.swipe);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, new Swipe()).commit();
 
-        koloda = findViewById(R.id.koloda);
+
+
         adapter = new SwipeAdapter(this, list);
-        System.out.println("OIDZAHUIDHZAUDHAZIUDHZAUIHDZAUIHDIUZAD");
-        System.out.println(adapter.toString());
-        if(koloda != null) {
-            koloda.setAdapter(adapter);
-        } else {
-            System.out.println("Oui");
-        }
-        Button button1 = (Button) findViewById(R.id.button1);
-        TextView textView1 = (TextView) findViewById(R.id.textView1);
-        button1.setOnClickListener(new View.OnClickListener() {
+        //koloda.setAdapter(adapter);
 
-            @Override
-            public void onClick(View v) {
-
-                textView1.setText("Voilàa le mot de passe");
-
-            }
-        });
 
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
+            switch (item.getItemId()) {
+                case R.id.swipe:
+                    selectedFragment = new Swipe();
+                    break;
+                case R.id.suggestion:
+                    selectedFragment = new Suggestion();
+                    break;
+                case R.id.profil:
+                    selectedFragment = new Profil();
+                    break;
+            }
+            // It will help to replace the
+            // one fragment to other.
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.nav_host_fragment_activity_main, selectedFragment)
+                    .commit();
+            return true;
+        }
+    };
+
 }
 
 

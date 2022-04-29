@@ -3,13 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/profil">
+    app:startDestination="@id/suggestion">
 
-    <fragment
-        android:id="@+id/profil"
-        android:name="uqac.dim.appinfomobile.Profil"
-        android:label="fragment_profil"
-        tools:layout="@layout/fragment_profil" />
     <fragment
         android:id="@+id/swipe"
         android:name="uqac.dim.appinfomobile.Swipe"
@@ -20,4 +15,9 @@
         android:name="uqac.dim.appinfomobile.Suggestion"
         android:label="fragment_suggestion"
         tools:layout="@layout/fragment_suggestion" />
+    <fragment
+        android:id="@+id/profil"
+        android:name="uqac.dim.appinfomobile.Profil"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" />
 </navigation>

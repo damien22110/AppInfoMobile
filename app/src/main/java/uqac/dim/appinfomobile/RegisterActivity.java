@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.DocumentReference;
 
@@ -23,7 +24,7 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText mFullName,mEmail,mPassword,mPhone;
+    EditText mUsername,mEmail,mPassword;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -36,10 +37,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mFullName   = findViewById(R.id.fullName);
+        mUsername   = findViewById(R.id.username);
         mEmail      = findViewById(R.id.Email);
         mPassword   = findViewById(R.id.password);
-        mPhone      = findViewById(R.id.phone);
         mRegisterBtn= findViewById(R.id.registerBtn);
         mLoginBtn   = findViewById(R.id.createText);
 
@@ -56,8 +56,12 @@ public class RegisterActivity extends AppCompatActivity {
         mRegisterBtn.setOnClickListener(v -> {
             final String email = mEmail.getText().toString().trim();
             String password = mPassword.getText().toString().trim();
-            final String fullName = mFullName.getText().toString();
-            final String phone    = mPhone.getText().toString();
+            final String username = mUsername.getText().toString();
+
+            if(TextUtils.isEmpty(email)){
+                mEmail.setError("");
+                return;
+            }
 
             if(TextUtils.isEmpty(email)){
                 mEmail.setError("Email is Required.");
@@ -80,21 +84,19 @@ public class RegisterActivity extends AppCompatActivity {
 
             fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
-
-                    // send verification link
-
                     FirebaseUser fuser = fAuth.getCurrentUser();
+
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(username).build();
+
+                    fuser.updateProfile(profileUpdates);
+
 
                     Toast.makeText(RegisterActivity.this, "Bienvenue sur l'application !", Toast.LENGTH_SHORT).show();
                     userID = fAuth.getCurrentUser().getUid();
                     DocumentReference documentReference = fStore.collection("users").document(userID);
                     Map<String,Object> user = new HashMap<>();
-                    user.put("fName",fullName);
-                    user.put("email",email);
-                    user.put("phone",phone);
                     documentReference.set(user).addOnSuccessListener(aVoid -> Log.d(TAG, "onSuccess: user Profile is created for "+ userID)).addOnFailureListener(e -> Log.d(TAG, "onFailure: " + e));
                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
-
                 }else {
                     Toast.makeText(RegisterActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);

@@ -1,12 +1,20 @@
 package uqac.dim.appinfomobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +31,10 @@ public class Profil extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    TextView adresse;
+    TextView prenom;
+    TextView mLogoutBtn;
 
     public Profil() {
         // Required empty public constructor
@@ -42,6 +54,7 @@ public class Profil extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -59,7 +72,23 @@ public class Profil extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profil, container, false);
+        View root = inflater.inflate(R.layout.fragment_profil, container, false);
+        prenom = root.findViewById(R.id.textView_profil_prenom);
+        adresse = root.findViewById(R.id.textView_profil_adresse);
+        mLogoutBtn = root.findViewById(R.id.logout_btn);
+        FirebaseUser fireBaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        prenom.setText(fireBaseUser.getDisplayName());
+        adresse.setText(fireBaseUser.getEmail());
+        mLogoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(root.getContext(), LoginActivity.class));
+            }
+        });
+        root.findViewById(R.id.koloda);
+        return root;
     }
+
 
 }

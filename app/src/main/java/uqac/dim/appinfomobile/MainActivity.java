@@ -5,21 +5,27 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Window;
 
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.fragment.app.Fragment;
 
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import com.yalantis.library.Koloda;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 public class MainActivity extends AppCompatActivity {

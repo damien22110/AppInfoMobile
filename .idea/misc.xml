@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/drawable/textview_border.xml" value="0.1065" />
         <entry key="app/src/main/res/drawable/textviewborder.xml" value="0.1065" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_profil.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_suggestion.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_swipe.xml" value="0.35572916666666665" />

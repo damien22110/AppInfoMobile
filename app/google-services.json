@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "895006408989",
+    "project_id": "appinfomobile",
+    "storage_bucket": "appinfomobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895006408989:android:946b45b3ad72c478d761f4",
+        "android_client_info": {
+          "package_name": "uqac.dim.appinfomobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895006408989-2fh9osi7nckn8334qcvdaand9um4uqsc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj_Cv7iW3VQ124ssBqeubNT7NWvdRAmeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895006408989-2fh9osi7nckn8334qcvdaand9um4uqsc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,14 +1,26 @@
 package uqac.dim.appinfomobile;
 
+import android.media.Image;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.yalantis.library.Koloda;
+import com.yalantis.library.KolodaListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +44,9 @@ public class Swipe extends Fragment {
     private SwipeAdapter adapter;
     private List<Integer> list;
     Koloda koloda;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    ArrayList<Film> filmDb = new ArrayList<Film>();
 
     public Swipe() {
         // Required empty public constructor
@@ -63,6 +78,7 @@ public class Swipe extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
     }
 
 
@@ -73,8 +89,28 @@ public class Swipe extends Fragment {
         View root = inflater.inflate(R.layout.fragment_swipe, container, false);
         list = new ArrayList<>();
         koloda = root.findViewById(R.id.koloda);
-        adapter = new SwipeAdapter(list);
-        koloda.setAdapter(adapter);
+
+        db.collection("films")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.i("DIM", document.getId() + " => " + document.getData());
+                                filmDb.add(new Film(document.getData().get("realisator").toString(), document.getData().get("title").toString(), document.getData().get("type").toString(), document.getData().get("picture").toString()));
+
+                            }
+                        } else {
+                            Log.i("DIM", "Error getting documents.", task.getException());
+                        }
+                        adapter = new SwipeAdapter(filmDb);
+                        koloda.setAdapter(adapter);
+
+                    }
+                });
+
         return root;
     }
+
 }

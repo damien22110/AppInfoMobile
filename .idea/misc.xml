@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/drawable/loop_24.xml" value="0.19" />
         <entry key="app/src/main/res/drawable/textview_border.xml" value="0.1065" />
         <entry key="app/src/main/res/drawable/textviewborder.xml" value="0.1065" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_profil.xml" value="0.35572916666666665" />

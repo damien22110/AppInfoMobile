@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class SwipeAdapter extends BaseAdapter {
@@ -38,7 +40,9 @@ public class SwipeAdapter extends BaseAdapter {
         {
             view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_koloda,parent,false);
             TextView mv_name = view.findViewById(R.id.movie_name);
+            com.google.android.material.imageview.ShapeableImageView picture = view.findViewById(R.id.image);
             mv_name.setText(getItem(i).title);
+            Picasso.get().load(getItem(i).picture).into(picture);
         } else
         {
             view=convertView;

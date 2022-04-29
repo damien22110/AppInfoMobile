@@ -16,11 +16,11 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:textSize="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/Info" />
+            android:text="@string/Info"
+            android:textSize="25dp" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -30,19 +30,23 @@
             android:layout_marginTop="20dp"
             android:src="@android:drawable/ic_menu_myplaces" />
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView_profil_prenom"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/Données" />
-
+            android:layout_margin="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/textviewborder"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="@string/Prenom" />
 
         <TextView
-            android:id="@+id/Adresse_label"
+            android:id="@+id/textView_profil_adresse"
             android:layout_width="fill_parent"
-            android:layout_margin="20dp"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/textviewborder"
@@ -50,17 +54,13 @@
             android:padding="5dp"
             android:text="@string/Adresse" />
 
-        <TextView
-            android:id="@+id/mdp_label"
-            android:layout_width="fill_parent"
-            android:layout_margin="20dp"
+        <Button
+            android:id="@+id/logout_btn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/textviewborder"
-            android:gravity="center_vertical"
-            android:padding="5dp"
-            android:text="@string/MDP" />
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:text="@string/logout" />
 
 
     </LinearLayout>

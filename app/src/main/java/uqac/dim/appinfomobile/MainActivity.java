@@ -1,5 +1,6 @@
 package uqac.dim.appinfomobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -16,6 +17,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -31,6 +35,9 @@ import butterknife.BindView;
 public class MainActivity extends AppCompatActivity {
     private SwipeAdapter adapter;
     private List<Integer> list;
+
+    FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
     TextView mytexte;
     Button mybutton;
     Koloda koloda;
@@ -59,6 +66,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+
+        super.onStart();
+
+        if(currentUser == null) {
+            sendToLoginActivity();
+        }
+    }
+
+    private void sendToLoginActivity() {
+        Intent intent  = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override

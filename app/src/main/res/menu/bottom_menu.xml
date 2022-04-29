@@ -3,12 +3,12 @@
 
     <item
         android:title="Swipe"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/favorite_24"
         android:enabled="true"
         android:id="@+id/swipe"/>
     <item
         android:title="Suggestions"
-        android:icon="@drawable/ic_baseline_cloud_24"
+        android:icon="@drawable/help"
         android:enabled="true"
         android:id="@+id/suggestion"/>
     <item

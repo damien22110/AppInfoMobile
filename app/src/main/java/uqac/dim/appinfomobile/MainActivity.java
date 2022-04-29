@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        adapter = new SwipeAdapter(this, list);
+        adapter = new SwipeAdapter(list);
         //koloda.setAdapter(adapter);
 
 

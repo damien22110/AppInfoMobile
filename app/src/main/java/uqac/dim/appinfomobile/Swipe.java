@@ -8,6 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.yalantis.library.Koloda;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Swipe#newInstance} factory method to
@@ -23,6 +28,10 @@ public class Swipe extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private SwipeAdapter adapter;
+    private List<Integer> list;
+    Koloda koloda;
 
     public Swipe() {
         // Required empty public constructor
@@ -56,10 +65,16 @@ public class Swipe extends Fragment {
 
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_swipe, container, false);
+        View root = inflater.inflate(R.layout.fragment_swipe, container, false);
+        list = new ArrayList<>();
+        koloda = root.findViewById(R.id.koloda);
+        adapter = new SwipeAdapter(list);
+        koloda.setAdapter(adapter);
+        return root;
     }
 }

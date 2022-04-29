@@ -9,11 +9,9 @@ import android.widget.BaseAdapter;
 import java.util.List;
 
 public class SwipeAdapter extends BaseAdapter {
-    private Context context;
     private List<Integer> list;
 
-    public SwipeAdapter(Context context, List<Integer> list) {
-        this.context = context;
+    public SwipeAdapter(List<Integer> list) {
         this.list = list;
     }
 
